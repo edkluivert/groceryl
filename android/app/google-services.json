@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "211636885189",
+    "project_id": "groceryl-1b80e",
+    "storage_bucket": "groceryl-1b80e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211636885189:android:88cc6f1514508d17e7c2ac",
+        "android_client_info": {
+          "package_name": "com.kluivert.groceryl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211636885189-luegp2am6c6uh7keqeblbpk90tqlgq0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kluivert.groceryl",
+            "certificate_hash": "4573c63e96316d0bfc4ee9e92373a49efa109b79"
+          }
+        },
+        {
+          "client_id": "211636885189-4bh7djjt4u1949iouk8bhgjtpa233s53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxV0uLIZTqPZaxV3XhQuEra0rr_pI06P0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211636885189-4bh7djjt4u1949iouk8bhgjtpa233s53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
