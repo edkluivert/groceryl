@@ -12,4 +12,9 @@ const wFruitsColor = const Color(0xFFEFF7D3);
 const wVegetables = const Color(0xFFD3E6F7);
 const wBannerDarkColor = const Color(0xFFFF8730);
 const wBannerLightColor = const Color(0xFFFFBC6B);
+const wBestPricePicBgColor = const Color(0xFFF2F2F2);
+const wActiveDotColor = const Color(0xFFEEBB4D);
+const wInactiveColor = const Color(0xFFD9D8D3);
+
+
 

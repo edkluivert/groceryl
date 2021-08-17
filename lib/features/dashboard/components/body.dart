@@ -8,6 +8,7 @@ import 'package:groceryl/config/app_strings.dart';
 import 'package:groceryl/config/pallate.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryl/features/dashboard/components/banner_item.dart';
+import 'package:groceryl/features/dashboard/components/best_deals_item.dart';
 
 class Body extends StatelessWidget{
 
@@ -182,13 +183,49 @@ class Body extends StatelessWidget{
               ),
               SizedBox(height: 10.h,),
                BannerItem(),
+              SizedBox(height: 15.h,),
+              Container(
+                height: 16.h,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget> [
+                    Text("Best Price",
+                      style: GoogleFonts.montserrat(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: wTitleTextColor
+                      ),
+                    ),
+                    Text("Show All",
+                      style: GoogleFonts.montserrat(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w400,
+                          color: wTitleTextColor
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10.h,),
+              GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,),
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext ctx, index) {
+                    return BestDealsItem();
+                    }
+                  ),
             ],   
           ),
         ),
       ),
    );
   }
-
 
   Container MyCategory(String imageVal, String itemName, int cardColor) {
     return Container(
