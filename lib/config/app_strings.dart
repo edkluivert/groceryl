@@ -6,3 +6,5 @@ const String groceryItemDesc = "Cabbage (comprising several cultivars of Brassic
     " (B. oleracea var. oleracea), and belongs to the cole crops or brassicas, meaning"
     " it is closely related to broccoli and cauliflower (var. botrytis); Brussels sprouts "
     "(var. gemmifera); and Savoy cabbage (var. sabauda).";
+const String btnCheckout = 'Checkout';
+const String symbolRs = '\₦ ';

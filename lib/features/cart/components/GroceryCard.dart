@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:groceryl/config/constants.dart';
+import 'package:groceryl/config/pallate.dart';
 import 'package:groceryl/core/model/grocery.dart';
 import 'package:groceryl/features/cart/components/fav_btn.dart';
 import 'package:groceryl/features/cart/components/price.dart';
@@ -34,7 +35,7 @@ class GroceryCard extends StatelessWidget {
           children: [
             Hero(
               tag: grocery.title!,
-              child: Image.asset(grocery.image!),
+              child: Image.asset(grocery.image!,height: 100.h,),
             ),
             Text(
               grocery.title!,
@@ -58,7 +59,32 @@ class GroceryCard extends StatelessWidget {
                 Price(amount: "50.00"),
                 FavBtn(),
               ],
-            )
+            ),
+           SizedBox(height: 40.h,),
+            Center(
+              child: SizedBox(
+                width: 120.w,
+                height: 30.h,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: wPrimaryColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.r)
+                      )
+                  ),
+                  onPressed: () {},
+                  child: Text("Add to cart",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10.sp
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+
           ],
         ),
       ),
