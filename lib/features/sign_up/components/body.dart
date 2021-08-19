@@ -49,7 +49,7 @@ class Body extends StatelessWidget{
             ),
             SizedBox(height: 20.h,),
             Container(
-            height: 700.h,
+            height: 800.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(topRight: Radius.circular(10.r),
@@ -71,6 +71,7 @@ class Body extends StatelessWidget{
                       ),
                     ),
                     SignUpForm(),
+
                   ],
                 ),
               ),

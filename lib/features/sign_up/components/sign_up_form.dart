@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:groceryl/config/pallate.dart';
 import 'package:groceryl/features/sign_up/controller/sign_up_controller.dart';
@@ -40,24 +41,169 @@ class _SignUpForm extends State<SignUpForm> {
              SizedBox(height: 10.h),
              buildConfirmPassFormField(),
              SizedBox(height: 40.h),
-             SizedBox(
-               width: double.infinity,
-               height: 56.h,
-               child: ElevatedButton(
-                 onPressed: () {},
-                 child: Text(
-                   'Proceed',
-                   style: TextStyle(color: Colors.white,
-                       fontSize: 18.sp,
-                       fontFamily: 'Roboto'
+             Align(
+               alignment: Alignment.topLeft,
+               child: Wrap(
+                 children: [
+                   Text("By registering on the app, you agree to the ",style: GoogleFonts.montserrat(
+                     color: Color(0xA9DEA35B),
+                     fontSize: 13.sp,
+                     fontWeight: FontWeight.w500
+                   ),),
+                   Text("Terms & Conditions.",style: GoogleFonts.montserrat(
+                     color: wPrimaryColor,
+                     fontSize: 13.sp,
+                       fontWeight: FontWeight.w500,
+                     decoration: TextDecoration.underline,
+                   ),
+                   ),
+                 ],
+               ),
+             ),
+
+             SizedBox(height: 40.h),
+             Material(
+               color : Colors.transparent,
+               child: InkWell(
+                 onTap: (){},
+                 splashColor: wPrimaryColorLight,
+                 child: Container(
+                   height: 55.h,
+                   width: double.infinity,
+                   decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                         begin: Alignment.centerLeft,
+                         end: Alignment.centerRight,
+                         stops: [
+                           0.3,
+                           0.9
+                         ],
+                         colors: [
+                           wBannerDarkColor,
+                           wBannerLightColor,
+                         ],
+                       ),
+                     borderRadius: BorderRadius.only(
+                       topLeft: Radius.circular(10.r),
+                        bottomLeft: Radius.circular(10.r),
+                        topRight: Radius.circular(10.r),
+                     ),
+                   ),
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Text("PROCEED".toUpperCase(),
+                       style: GoogleFonts.montserrat(
+                         color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                         fontSize: 17.sp
+                        ),
+                       ),
+                       Icon(Icons.arrow_forward_ios_sharp, color: Colors.white,)
+                     ],
                    ),
                  ),
-                 style: ElevatedButton.styleFrom(
-                   primary: wPrimaryColor,
-                   shape: new RoundedRectangleBorder(
-                       borderRadius: new BorderRadius.circular(10.r)
-                   ),
+               ),
+             ),
+             SizedBox(height: 22.h,),
+             Text("Or Sign Up With",style: GoogleFonts.montserrat(
+               color: Color(0xA9DEA35B),
+               fontSize: 13.sp,
+               fontWeight: FontWeight.w500,
+
+             ),
+             ),
+             SizedBox(height: 18.h,),
+             Center(
+               child: SizedBox(
+                 width: 240.w,
+                 height: 64.h,
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: [
+                     Material(
+                       color : Colors.transparent,
+                       child: InkWell(
+                         onTap:(){},
+                         child: Container(
+                           width: 64.w,
+                           height: 64.h,
+                           decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               border: Border.all(
+                                   color: Color(0xFF200A4D).withOpacity(0.20),
+                                   width: 1.w
+                               )
+                           ),
+                           child: Padding(
+                               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                               child: SvgPicture.asset('assets/icons/google.svg', width: 18.w, height: 18.h,)),
+                         ),
+                       ),
+                     ),
+
+                     Material(
+                       color : Colors.transparent,
+                       child: InkWell(
+                         onTap: (){},
+                         child: Container(
+                           width: 64.w,
+                           height: 64.h,
+                           decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               border: Border.all(
+                                   color: Color(0xFF200A4D).withOpacity(0.20),
+                                   width: 1.w
+                               )
+                           ),
+                           child: Padding(
+                               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                               child: SvgPicture.asset('assets/icons/facebook.svg', width: 18.w, height: 18.h,)),
+                         ),
+                       ),
+                     ),
+                     Material(
+                       color : Colors.transparent,
+                       child: InkWell(
+                         onTap: (){},
+                         child: Container(
+                           width: 64.w,
+                           height: 64.h,
+                           decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               border: Border.all(
+                                   color: Color(0xFF200A4D).withOpacity(0.20),
+                                   width: 1.w
+                               )
+                           ),
+                           child: Padding(
+                               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                               child: SvgPicture.asset('assets/icons/apple.svg', width: 18.w, height: 18.h,)),
+                         ),
+                       ),
+                     )
+                   ],
                  ),
+               ),
+             ),
+             SizedBox(height: 20.h,),
+             Center(
+               child:  Wrap(
+                 children: [
+                   Text("Existing User?",style: GoogleFonts.montserrat(
+                       color: Color(0xA9DEA35B),
+                       fontSize: 13.sp,
+                       fontWeight: FontWeight.w500
+                   ),),
+                   SizedBox(width: 5.w,),
+                   Text("Log in",style: GoogleFonts.montserrat(
+                     color: wPrimaryColor,
+                     fontSize: 13.sp,
+                     fontWeight: FontWeight.w500,
+                     decoration: TextDecoration.underline,
+                   ),
+                   ),
+                 ],
                ),
              ),
              SizedBox(
@@ -118,8 +264,6 @@ class _SignUpForm extends State<SignUpForm> {
       decoration: InputDecoration(
 
          labelText: "Password",
-        hintText: "Password",
-
         labelStyle: GoogleFonts.montserrat(
             color: wPrimaryColor
         ),
