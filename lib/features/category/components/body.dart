@@ -7,6 +7,15 @@ import 'package:groceryl/config/pallate.dart';
 import 'package:groceryl/features/dashboard/components/grocery_category_item.dart';
 
 class Body extends StatelessWidget{
+
+  final categoryImages = ['assets/images/sayur.png','assets/images/fruit.png','assets/images/spice.png',
+    'assets/images/ingredient.png',
+    'assets/images/bread.png','assets/images/sayur.png'];
+  final categoryNames = ['Vegetables','Fruits','Spices','Ingredients',
+    'Side Dishes', 'Broccoli'];
+  final categoryColor = [0xFFF7E4D3,0xFFD3F7DF,0xFFF7D3EA,0xFFEFF7D3,
+    0xFFD3E6F7,0xFFF7E4D3];
+
   @override
   Widget build(BuildContext context) {
    return SafeArea(child: SingleChildScrollView(
@@ -81,7 +90,8 @@ class Body extends StatelessWidget{
                    scrollDirection: Axis.vertical,
                    physics: NeverScrollableScrollPhysics(),
                    itemBuilder: (BuildContext ctx, index) {
-                     return MyGroceryCategory('assets/images/chicken.png', "chicken", 0xFFD3E6F7);
+                     return MyGroceryCategory(categoryImages[index], categoryNames[index],
+                         categoryColor[index]);
                    }
                ),
            ),
@@ -91,30 +101,22 @@ class Body extends StatelessWidget{
    );
   }
 
-  Stack MyGroceryCategory(String imageVal, String itemName, int cardColor) {
-    return Stack(
-      children: [
-        Container(
-          width: 153.w,
-          height: 164.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.r),
-            color: Color(cardColor),
+  Container MyGroceryCategory(String imageVal, String itemName, int cardColor) {
+    return Container(
+      width: 180.w,
+      height: 180.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.r),
+        color: Color(cardColor),
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 16.h, left: 1.5.w, right: 1.5.w),
+            child: Image.asset(imageVal,width: 156.w,height: 104.h,),
           ),
-        ),
-        Positioned(
-          top: 16.h,
-          left: 1.5.w,
-          right: 1.5.w,
-          child: Image.asset(imageVal,width: 156.w,height: 104.h,),
-        ),
-        Positioned(
-          top: 130.h,
-          left: 45.w,
-          right: 45.w,
-          child:SizedBox(
-            height: 44.h,
-            width: 153.w,
+          SizedBox(height: 12.h,),
+          Center(
             child: Text(
               itemName,
               style: GoogleFonts.montserrat(
@@ -124,8 +126,8 @@ class Body extends StatelessWidget{
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

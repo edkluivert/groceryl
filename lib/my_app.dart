@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:groceryl/config/pallate.dart';
 import 'package:groceryl/features/home_screen/view/home_screen.dart';
-import 'package:groceryl/features/sign_up/view/sign_up.dart';
 
 class MyApp extends StatelessWidget {
 
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: SignUpScreen(),
+          home: HomeScreen(),
           debugShowCheckedModeBanner: false,
       ),
     );

@@ -6,6 +6,16 @@ import 'package:groceryl/config/pallate.dart';
 
 class BestDealsItem extends StatelessWidget {
 
+   final String itemName;
+   final String itemPic;
+   final String itemPrice;
+   final String itemWeight;
+
+   BestDealsItem({
+     required this.itemName, required this.itemPic, required this.itemPrice,
+     required this.itemWeight
+});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +55,7 @@ class BestDealsItem extends StatelessWidget {
                 ),
                   borderRadius: BorderRadius.circular(15.r),
               ),
-              child: Image.asset('assets/images/chicken.png',width: 167.w, height: 112.h,),
+              child: Image.asset(itemPic,width: 167.w, height: 112.h,),
             ),
             SizedBox(height:11.h),
             Container(
@@ -58,24 +68,26 @@ class BestDealsItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Chicken",
+                        itemName,
                         maxLines: 2,
                         style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                          color: wTitleTextColor,
                          fontSize: 14.sp
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      Text(
-                        "1 Kilograms",
-                        maxLines: 2,
-                        style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black,
-                          fontSize: 6.sp
+                      Expanded(
+                        child: Text(
+                          itemWeight,
+                          maxLines: 2,
+                          style: GoogleFonts.montserrat(
+                            fontWeight: FontWeight.w400,
+                            color: wTitleTextColor,
+                            fontSize: 8.sp
+                          ),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -83,11 +95,11 @@ class BestDealsItem extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 2.h),
                     child: Text(
-                      "NG.1500",
+                      "₦$itemPrice",
                       maxLines: 2,
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w500,
-                        color: Colors.black,
+                        color: wTitleTextColor,
                           fontSize: 14.sp
                       ),
                       overflow: TextOverflow.ellipsis,

@@ -12,12 +12,23 @@ import 'package:groceryl/features/dashboard/components/best_deals_item.dart';
 
 class Body extends StatelessWidget{
 
-  final categoryImages = ['assets/images/sayur.png','assets/images/sayur.png','assets/images/sayur.png','assets/images/sayur.png',
-    'assets/images/sayur.png'];
-  final categoryNames = ['Vegetables','Tomato','Onion','Spices',
-    'Cooking'];
+  final categoryImages = ['assets/images/sayur.png','assets/images/fruit.png','assets/images/spice.png',
+    'assets/images/ingredient.png',
+    'assets/images/bread.png'];
+  final categoryNames = ['Vegetables','Fruits','Spices','Ingredients',
+    'Side Dishes'];
   final categoryColor = [0xFFF7E4D3,0xFFD3F7DF,0xFFF7D3EA,0xFFEFF7D3,
     0xFFD3E6F7];
+
+  final bestDealsImages = ['assets/images/bread.png','assets/images/chicken.png',
+    'assets/images/meat.png','assets/images/sayur.png'
+
+  ];
+  final bestDealsNames = ['Bread','Chicken','Meat','Broccoli'];
+
+  final bestDealsWeight = ['Full loaf','1 kilogram','2 Kilogram','5 Pieces'];
+
+  final bestDealsPrice = ['500','2000','2500','300'];
 
   @override
   Widget build(BuildContext context) {
@@ -217,7 +228,11 @@ class Body extends StatelessWidget{
                   scrollDirection: Axis.vertical,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (BuildContext ctx, index) {
-                    return BestDealsItem();
+                    return BestDealsItem(itemName: bestDealsNames[index],
+                    itemPic: bestDealsImages[index],
+                    itemWeight: bestDealsWeight[index],
+                      itemPrice: bestDealsPrice[index],
+                    );
                     }
                   ),
             ],   

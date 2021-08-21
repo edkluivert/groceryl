@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget{
               index: controller.tabIndex,
               children: [
                 DashboardScreen(),
+                CartScreen(),
                 CategoryScreen(),
                 ChatScreen(),
                 ProfileScreen(),
@@ -74,10 +75,39 @@ class HomeScreen extends StatelessWidget{
               ),
               BottomNavigationBarItem(
                 icon: Container(
+                  width: 40.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                      color: controller.tabIndex == 1 ? wPrimaryColorLight : Colors.transparent,
+                      borderRadius: BorderRadius.circular(15.r)
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
+                    child: Column(
+                      children: [
+                        Icon(Groceryl.cart),
+                        SizedBox(height: 2.h,),
+                        Container(
+                          width: 4.w,
+                          height: 4.h,
+                          // margin: EdgeInsets.all(100.0),
+                          decoration: BoxDecoration(
+                              color: controller.tabIndex == 1 ? wPrimaryColor : Colors.transparent,
+                              shape: BoxShape.circle
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                label: 'Dashboard',
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
                     width: 40.w,
                     height: 40.h,
                     decoration: BoxDecoration(
-                        color: controller.tabIndex == 1 ? wPrimaryColorLight : Colors.transparent,
+                        color: controller.tabIndex == 2 ? wPrimaryColorLight : Colors.transparent,
                         borderRadius: BorderRadius.circular(15.r)),
                     child: Padding(
                   padding:EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
@@ -89,7 +119,7 @@ class HomeScreen extends StatelessWidget{
                         width: 4.w,
                         height: 4.h, // margin: EdgeInsets.all(100.0),
                         decoration: BoxDecoration(
-                            color: controller.tabIndex == 1 ? wPrimaryColor : Colors.transparent,
+                            color: controller.tabIndex == 2 ? wPrimaryColor : Colors.transparent,
                             shape: BoxShape.circle
                         ),
                       )
@@ -103,7 +133,7 @@ class HomeScreen extends StatelessWidget{
                     width: 40.w,
                     height: 40.h,
                     decoration: BoxDecoration(
-                        color: controller.tabIndex == 2 ? wPrimaryColorLight : Colors.transparent,
+                        color: controller.tabIndex == 3 ? wPrimaryColorLight : Colors.transparent,
                         borderRadius: BorderRadius.circular(15.r)),
                     child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
@@ -116,7 +146,7 @@ class HomeScreen extends StatelessWidget{
                         height: 4.h,
                         // margin: EdgeInsets.all(100.0),
                         decoration: BoxDecoration(
-                            color: controller.tabIndex == 2 ? wPrimaryColor : Colors.transparent,
+                            color: controller.tabIndex == 3 ? wPrimaryColor : Colors.transparent,
                             shape: BoxShape.circle
                         ),
                       )
@@ -130,7 +160,7 @@ class HomeScreen extends StatelessWidget{
                     width: 40.w,
                     height: 40.h,
                     decoration: BoxDecoration(
-                        color: controller.tabIndex == 3 ? wPrimaryColorLight : Colors.transparent,
+                        color: controller.tabIndex == 4 ? wPrimaryColorLight : Colors.transparent,
                         borderRadius: BorderRadius.circular(15.r)),
                     child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
@@ -143,7 +173,7 @@ class HomeScreen extends StatelessWidget{
                         height: 4.h,
                        // margin: EdgeInsets.all(100.0),
                         decoration: BoxDecoration(
-                            color: controller.tabIndex == 3 ? wPrimaryColor : Colors.transparent,
+                            color: controller.tabIndex == 4 ? wPrimaryColor : Colors.transparent,
                             shape: BoxShape.circle
                         ),
                       )
